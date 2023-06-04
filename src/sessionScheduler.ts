@@ -12,7 +12,6 @@ const createSessions = async () => {
     rule.hour = 10;
     rule.minute = 0;
 
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     const nextInvocation = schedule.scheduleJob(rule, () => {});
     const nextDate = nextInvocation.nextInvocation();
 
