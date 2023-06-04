@@ -5,7 +5,6 @@ import { Session } from './models';
 const createSessions = async () => {
   const daysOfWeek = [4, 5]; // Thursday: 4, Friday: 5
 
-  // Loop through each day of the week
   for (const day of daysOfWeek) {
     const rule = new schedule.RecurrenceRule();
     rule.dayOfWeek = day;

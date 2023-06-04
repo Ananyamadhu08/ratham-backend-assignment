@@ -12,7 +12,6 @@ export const deanController = {
       const dean = new Dean({
         universityID,
         password,
-
         name,
       });
 
