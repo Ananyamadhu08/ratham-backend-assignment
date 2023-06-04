@@ -3,6 +3,8 @@ import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import { deanRoutes, studentRoutes } from './routes';
+import { scheduleSessions } from './sessionScheduler';
 
 dotenv.config();
 
@@ -27,6 +29,11 @@ mongoose
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello world!');
 });
+
+scheduleSessions();
+
+app.use('/student', studentRoutes);
+app.use('/dean', deanRoutes);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
